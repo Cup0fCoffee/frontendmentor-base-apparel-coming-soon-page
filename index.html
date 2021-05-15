@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <style>
+    :root {
+      --clr-red: hsl(0, 36%, 70%);
+      --clr-soft-red: hsl(0, 93%, 68%);
+
+      --clr-dark-red: hsl(0, 6%, 24%);
+
+      font-size: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 10.5% 31% auto;
+      background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+      font-family: Josefin Sans, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding-left: 9%;
+    }
+
+    .header__logo {
+      width: 29%;
+    }
+
+    .aside__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .main {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 17%;
+    }
+
+    .main__header {
+      width: min-content;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: var(--clr-red);
+      font-size: 2.5rem;
+      letter-spacing: 0.27em;
+      line-height: 1.05em;
+      margin: 0;
+      margin-bottom: 1.2rem;
+    }
+
+    .main__header > strong {
+      font-weight: 700;
+      color: var(--clr-dark-red)
+    }
+
+    .main__text {
+      width: 85%;
+      color: var(--clr-red);
+      font-size: 0.89rem;
+      line-height: 1.6em;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+
+    .main__form {
+      width: 83%;
+    }
+
+    .main__email-input {
+      width: 100%;
+      padding: 1.2em 1.8em;
+      background: transparent;
+      border: 1px solid var(--clr-red);
+      border-radius: 2em;
+      color: var(--clr-red);
+      font-weight: 700;
+      font-size: 0.8rem;
+      font-family: inherit;
+    }
+
+    .main__email-input--invalid {
+      border: 2px solid var(--clr-soft-red);
+      background: url(./images/icon-error.svg);
+      background-repeat: no-repeat;
+      background-position: 75%;
+    }
+
+    .main__email-input--invalid::after {
+      content: '';
+      display: block;
+      background: url(./images/icon-error.svg);
+      position: absolute;
+    }
+
+    .main__email-input-error {
+      display: block;
+      text-align: left;
+      padding-left: calc(1rem * 0.8 * 1.8);
+      padding-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--clr-soft-red);
+    }
+
+    .main__submit-button {
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border-radius: 2em;
+      box-shadow: 0 1em 0.75em 0em hsl(0, 80%, 86%, 0.4);
+    }
+
+    .main__submit-button:hover {
+      background: hsl(0, 80%, 86%);
+    }
+
+    .main__submit-button-img {
+      height: 40%;
+      position: absolute;
+      top: 50%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+    }
+
+    .main__submit-button-input {
+      display: none;
+    }
+
+    @media (min-width: 800px) {
+      .container {
+        grid-template-columns: 11.5% 46% 42.5%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas:
+          ". header aside"
+          ". main aside";
+        background:
+          url(./images/bg-pattern-desktop.svg),
+          linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+        background-size: 57% 100%;
+      }
+
+      .header {
+        grid-area: header;
+        padding-left: 0;
+      }
+
+      .header__logo {
+        width: 25%;
+      }
+
+      .aside {
+        grid-area: aside;
+      }
+
+      .main {
+        grid-area: main;
+        text-align: left;
+        align-items: start;
+        padding-top: 11%;
+      }
+
+      .main__header {
+        font-size: 4em;
+      }
+
+      .main__text {
+        font-size: 1rem;
+        width: 68%;
+      }
+
+      .main__form {
+        width: 68%;
+      }
+
+      .main__email-input {
+        font-size: 1rem;
+      }
+
+      .main__email-input-error {
+        padding-left: 1.8rem;
+      }
+
+      .main__submit-button {
+        width: 22%;
+      }
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/logo.svg"
+        alt="Base Apparel Logo">
+    </header>
+
+    <aside class="aside">
+      <picture>
+        <source media="(min-width: 800px)" srcset="./images/hero-desktop.jpg">
+        <img
+          class="aside__img"
+          src="./images/hero-mobile.jpg"
+          alt="Hero">
+      </picture>
+    </aside>
+
+    <main class="main">
+      <h1 class="main__header">
+        We're <strong>coming soon</strong>
+      </h1>
+      <p class="main__text">
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch
+        deals.
+      </p>
+      <form class="main__form" method="POST" novalidate>
+        <div style="position: relative;">
+          <input
+            class="main__email-input"
+            type="email"
+            placeholder="Email Address"
+            required>
+
+          <label class="main__submit-button">
+            <img
+              class="main__submit-button-img"
+              src="./images/icon-arrow.svg"
+              alt="Right Arrow">
+            <input
+              class="main__submit-button-input"
+              type="submit"
+              value="">
+          </label>
+        </div>
+        <span class="main__email-input-error"></span>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const form = document.forms[0];
+    const emailInput = form.querySelector(".main__email-input");
+    const emailError = form.querySelector(".main__email-input-error");
+
+    form.addEventListener("submit", function (event) {
+      let isValid = true;
+      if (emailInput.validity.valueMissing
+          || emailInput.validity.typeMismatch) {
+        emailInput.classList.add("main__email-input--invalid");
+        isValid = false;
+        emailError.innerText = "Please provide a valid email";
+      } else {
+        emailInput.classList.remove("main__email-input--invalid");
+        emailError.innerText = "";
+      }
+
+      if (!isValid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+</body>
+</html>
